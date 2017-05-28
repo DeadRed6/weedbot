@@ -1,16 +1,18 @@
 const Discord = require('discord.js');
-const client = new Discord.client();
+const client = new Discord.Client();
 //a sneaky file that shall NEVER be uploaded! Muahahah.
 //so what if it's untracked. you can't stop me.
 const settings = require("./settings.json");
 
 client.on('ready',() => {
-  console.log('My creator has awoken me. What is my purpose?');
+  console.log('Operational.');
 })
 
+var prefix = "||";
 client.on('message', message => {
-  if (message.content === "weedbot?") {
-    message.reply("Is that my name? Interesting.");
+  if (message.author === client.user) return;
+  if (message.content.startsWith(prefix + "ping")) {
+    message.channel.send("pong");
   }
 });
 
