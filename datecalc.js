@@ -21,5 +21,5 @@ function timeRemaining(endtime){
   var minutes = Math.floor((t/1000/60) % 60); //60s in 1m.
   var hours = Math.floor((t/(1000*60*60)) % 24);
   return "It is " + hours + " hour(s), " + minutes + " minute(s), and "
-    + seconds + " seconds until the next 420.";
+    + seconds + " second(s) until the next 420.";
 }

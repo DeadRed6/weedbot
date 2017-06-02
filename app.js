@@ -20,7 +20,7 @@ client.on('message', message => {
   if (message.content.startsWith(prefix + '420')) {
     var currentDt = new Date();
     var todays420 = new Date();
-    todays420.setHours(17, 20, 0);
+    todays420.setHours(16, 20, 0);
     if(todays420 - currentDt > 0) {
       message.channel.send(timeRemaining(todays420));
     } else {
@@ -33,9 +33,12 @@ client.on('message', message => {
       var seconds = Math.floor((t/1000) % 60);
       var minutes = Math.floor((t/1000/60) % 60);
       var hours = Math.floor((t/(1000*60*60)) % 24);
-      return "It is " + hours + " hour(s), " + minutes + " minute(s), and"
-        + seconds + " seconds until the next 420.";
+      return "It is " + hours + " hour(s), " + minutes + " minute(s), and "
+        + seconds + " second(s) until the next 420.";
     }
+  } else
+  if (message.content.startsWith(prefix + "8ball ")) {
+   message.channel.send("Certainly not.");
   }
 });
 
