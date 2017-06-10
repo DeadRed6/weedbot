@@ -6,9 +6,11 @@ const settings = require("./settings.json");
 
 client.on('ready',() => {
   console.log('Operational.');
+  client.user.setGame("wid ma dong");
 })
 
 var prefix = "||";
+
 client.on('message', message => {
   if(!message.content.startsWith(prefix)) return;
   if (message.author.bot) return;
@@ -37,8 +39,13 @@ client.on('message', message => {
         + seconds + " second(s) until the next 420.";
     }
   } else
-  if (message.content.startsWith(prefix + "8ball ")) {
-   message.channel.send("Certainly not.");
+  if (message.content.startsWith(prefix + "wisdom")) {
+    var responses = ["Yeah, fo sho.", "Without a doubt.", "Hell yeah.", "Probably.",
+      "No idea.", "What you askin me fo?", "Hell nah.", "Nope.", "I guess not.",
+      "Find out fo yoself.", "Better off askin Dre.", "That's a hard one,",
+      "Let me hit a blunt first."];
+    var random = Math.floor(Math.random() * 13);
+    message.channel.send(responses[random]);
   }
 });
 
