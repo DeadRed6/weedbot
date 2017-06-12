@@ -19,6 +19,10 @@ client.on('message', message => {
     message.channel.send("pong");
   } else
 
+  if (message.content.startsWith(prefix + "say")) {
+      message.channel.send(message.content.split(" ").slice(1).join(" "));
+  } else
+
   if (message.content.startsWith(prefix + '420')) {
     var currentDt = new Date();
     var todays420 = new Date();
