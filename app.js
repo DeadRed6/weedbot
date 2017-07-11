@@ -12,6 +12,8 @@ client.on('ready',() => {
 var prefix = "||";
 
 client.on('message', message => {
+  var suffix = message.content.split(" ").slice(1).join(" ");
+  
   if(!message.content.startsWith(prefix)) return;
   if (message.author.bot) return;
 
@@ -20,7 +22,11 @@ client.on('message', message => {
   } else
 
   if (message.content.startsWith(prefix + "say")) {
-      message.channel.send(message.content.split(" ").slice(1).join(" "));
+      message.channel.send(suffix);
+  } else
+    
+  if (message.content.startsWith(prefix + "choose")) {
+    return;
   } else
 
   if (message.content.startsWith(prefix + '420')) {
